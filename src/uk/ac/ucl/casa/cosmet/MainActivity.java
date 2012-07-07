@@ -3,15 +3,26 @@ package uk.ac.ucl.casa.cosmet;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
-import android.view.MenuItem;
-import android.support.v4.app.NavUtils;
+import android.webkit.WebView;
 
 public class MainActivity extends Activity {
 
-    @Override
+    private WebView webView;
+
+	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        this.webView = (WebView) findViewById(R.id.graph_view);
+    }
+    
+    @Override
+    protected void onStart() {
+    	// TODO Auto-generated method stub
+    	super.onStart();
+
+    	this.webView.loadUrl("http://www.google.com");
     }
 
     @Override

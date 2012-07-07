@@ -1,9 +1,13 @@
 package uk.ac.ucl.casa.cosmet;
 
+import java.util.Date;
+
 import android.os.Bundle;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.View;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.Button;
 
@@ -27,17 +31,20 @@ public class MainActivity extends Activity {
 		this.statsButton.setClickable(true);
 		this.statsButton.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
-				webView.loadUrl(statsUrl);
+				webView.loadUrl(statsUrl + '?' + (new Date()).getTime());
 			}
 		});
 	}
 
+	@SuppressLint("SetJavaScriptEnabled")
 	@Override
 	protected void onStart() {
 		// TODO Auto-generated method stub
 		super.onStart();
 
 		this.webView.loadUrl(statsUrl);
+		WebSettings settings = webView.getSettings();
+		settings.setJavaScriptEnabled(true);
 	}
 
 	@Override

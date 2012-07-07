@@ -7,29 +7,27 @@ import android.webkit.WebView;
 
 public class MainActivity extends Activity {
 
-    private WebView webView;
+	private WebView webView;
 
 	@Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        
-        this.webView = (WebView) findViewById(R.id.graph_view);
-    }
-    
-    @Override
-    protected void onStart() {
-    	// TODO Auto-generated method stub
-    	super.onStart();
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
 
-    	this.webView.loadUrl("http://www.google.com");
-    }
+		this.webView = (WebView) findViewById(R.id.graph_view);
+	}
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
-        return true;
-    }
+	@Override
+	protected void onStart() {
+		// TODO Auto-generated method stub
+		super.onStart();
 
-    
+		this.webView.loadUrl("http://128.40.111.232/cosmet/cosmet-gtv-html/index.html");
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.activity_main, menu);
+		return true;
+	}
 }

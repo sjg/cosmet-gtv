@@ -2,32 +2,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-
+    
     <LinearLayout
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/background_light"
-        android:orientation="horizontal" >
-
-        <LinearLayout
+        android:layout_height="match_parent">
+        
+        <LinearLayout 
+            android:orientation="vertical"
             android:layout_width="@dimen/sidebar_width"
             android:layout_height="fill_parent"
-            android:orientation="vertical" >
-
+            android:background="@android:color/background_dark" >
+            
             <!-- The menu stuff -->
-
             <Button
+                android:src="@drawable/ic_action_search"
                 android:layout_width="fill_parent"
-                android:layout_height="@dimen/sidebar_button_height"
-                android:src="@drawable/ic_action_search" >
+                android:layout_height="@dimen/sidebar_button_height">
             </Button>
+            
         </LinearLayout>
-
-        <WebView
-            android:id="@+id/graph_view"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:background="@android:color/black" />
-    </LinearLayout>
+        
+        <WebView 
+           android:layout_width="fill_parent"
+           android:layout_height="fill_parent"
+           android:background="@android:color/black"
+           android:id="@+id/graph_view" />
+        </LinearLayout>
+    
 
 </RelativeLayout>

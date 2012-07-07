@@ -4,3 +4,4 @@ gen/
 .*.swo
 .g5
 .classpath
+.DS_Store
